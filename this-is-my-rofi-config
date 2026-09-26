@@ -1,0 +1,143 @@
+/**
+ * ROFI Color theme
+ * User: Qball
+ */
+
+
+* {
+  /* Default background color */
+  background-color: black/0%;
+  text-color:       white;
+}
+
+
+window {
+  padding: 1em;
+
+  border-color: transparent;
+  border:       5px;
+  border-radius: 10px;
+
+  width:  1024px; 
+//  height: 768px;
+
+  background-color: transparent;
+}
+
+mainbox {
+  spacing: -6px;
+  children: [inputbar,wrapper-mode-switcher,listview];
+}
+
+element {
+  background: transparent;
+  children: [ element-icon, element-text ];
+}
+element,element-text,element-icon, button {
+    cursor: pointer;
+}
+
+inputbar {
+  margin: 0px 0px 0.5em 0em;
+  spacing: 1em;
+  children: [ button-iggy1, entry,overlay,case-indicator, button-iggy2];
+}
+
+button-iggy1, button-iggy2 {
+  expand: false;
+  content: " ";
+  action: "kb-primary-paste";
+  horizontal-align: 0.5;
+}
+button-iggy2 {
+  action: "kb-screenshot";
+}
+
+listview, inputbar, message {
+  padding: 1em;
+  border-color: grey;
+  border:        2px;
+  border-radius: 7px;
+  background-color: black/30%;
+
+  columns: 4;
+  lines:   4;
+}
+listview {
+  border:       0px 2px 2px 2px;
+  border-radius: 0px 0px 7px 7px;
+}
+
+
+element {
+    border:  0;
+    padding:      10px;
+    font:         "Mono 10";
+    orientation: horizontal;
+}
+element-icon {
+  size: 3em;
+}
+
+element  selected {
+  border-color: grey;
+  border:       2px;
+  border-radius: 7px;
+  background-color: black/30%;
+}
+
+element-text, element-icon {
+  font:             inherit; 
+  horizontal-align: 0.5;
+}
+
+wrapper-mode-switcher {
+    orientation: horizontal;
+
+    expand:     false;
+    spacing:    0;
+}
+icon-ms-ic1 {
+    filename: "go-previous";
+    action: "kb-mode-previous";
+}
+icon-ms-ic2 {
+    filename: "go-next";
+    action: "kb-mode-next";
+}
+icon-ms-ic1,icon-ms-ic2 {
+    size: 16;
+    vertical-align: 0.8;
+    expand:        false;
+    border:       0px 0px 5px ;
+    border-color: grey;
+}
+
+mode-switcher {
+    border:  0px;
+    spacing: 0px;
+    expand: true;
+}
+button {
+    text-color: white;
+    border:       0px 0px 5px ;
+    border-color: grey;
+    border-radius:    10px 10px 0 0;
+    background-image: linear-gradient(to bottom, grey/50%, black/30%);
+    horizontal-align: 0.5;
+}
+button selected.normal {
+    text-color: white;
+    margin: 0px;
+    padding: 0px;
+
+    border:       5px 5px 0px ;
+    border-color: grey;
+    border-radius:    10px 10px 0 0;
+    background-image: linear-gradient(to bottom, grey, black/30%);
+}
+
+entry {
+    placeholder: "N3oFragment";
+    placeholder-color: darkgrey/30%;
+  }
